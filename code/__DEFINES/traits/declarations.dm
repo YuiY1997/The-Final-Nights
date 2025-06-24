@@ -32,6 +32,7 @@
 #define TRAIT_CHUNKYFINGERS		"chunkyfingers" //means that you can't use weapons with normal trigger guards.
 #define TRAIT_DUMB				"dumb"
 #define TRAIT_ADVANCEDTOOLUSER	"advancedtooluser" //Whether a mob is dexterous enough to use machines and certain items or not.
+#define TRAIT_NO_HANDS			"no_hands" // For stuff like lupus.
 #define TRAIT_MONKEYLIKE		"monkeylike" //Antagonizes the above.
 #define TRAIT_PACIFISM			"pacifism"
 #define TRAIT_ELYSIUM			"elysium"
@@ -100,6 +101,8 @@
 #define TRAIT_NOMOBSWAP         "no-mob-swap"
 #define TRAIT_XRAY_VISION       "xray_vision"
 #define TRAIT_THERMAL_VISION    "thermal_vision"
+#define TRAIT_PROTEAN_VISION	"protean_vision"
+#define TRAIT_GHOST_VISION	"ghost_vision"
 #define TRAIT_ABDUCTOR_TRAINING "abductor-training"
 #define TRAIT_ABDUCTOR_SCIENTIST_TRAINING "abductor-scientist-training"
 #define TRAIT_SURGEON           "surgeon"
@@ -145,9 +148,25 @@
 /// The holder of this trait has antennae or whatever that hurt a ton when noogied
 #define TRAIT_ANTENNAE	"antennae"
 
+/// Trait that tracks if something has been renamed. Typically holds a REF() to the object itself (AKA src) for wide addition/removal.
+#define TRAIT_WAS_RENAMED "was_renamed"
+
+/// A transforming item that is actively extended / transformed
+#define TRAIT_TRANSFORM_ACTIVE "active_transform"
+
 #define TRAIT_NOBLEED "nobleed" //This carbon doesn't bleed
 
+///generic atom traits
+/// Trait from being under the floor in some manner
+#define TRAIT_UNDERFLOOR "underfloor"
+/// Marks an atom when the cleaning of it is first started, so that the cleaning overlay doesn't get removed prematurely
+#define TRAIT_CURRENTLY_CLEANING "currently_cleaning"
+
 #define TRAIT_THUNDERSHOT		"thundershot" // Fire without ammo.
+#define TRAIT_SCENTTRUEFORM		"scenttrueform" // Werewolf ID sniff.
+#define TRAIT_DOGWOLF			"dogwolf"
+#define TRAIT_CORAX				"corax" // this is used to apply the Corax Crinos/Corvid, as well as make being in "corvid" not veil-damaging
+
 #define TRAIT_DANCER			"dancer"
 #define TRAIT_EXP_DRIVER		"experienced_driver"
 #define TRAIT_BONE_KEY			"bone_key"
@@ -161,12 +180,16 @@
 #define TRAIT_STAKE_RESISTANT	"stake_resistant"
 #define TRAIT_COLD_AURA			"cold_aura"
 #define TRAIT_WARM_AURA			"warm_aura"
+#define TRAIT_FRENETIC_AURA		"frenetic_aura"
+#define TRAIT_UNBONDABLE		"unbondable"
+#define TRAIT_DEFICIENT_VITAE   "deficient_vitae"
 #define TRAIT_BLUSH_OF_HEALTH	"blush_of_health"
 #define TRAIT_POTENT_BLOOD		"potent_blood"
 #define TRAIT_CAN_EAT			"can_eat" // this is for kindred. not normal people. normal people do not need this flag.
 #define TRAIT_MESSY_EATER		"messy_eater"
 #define TRAIT_DEBTOR			"debtor"
 #define TRAIT_ANIMAL_REPULSION	"animal_repulsion"
+#define TRAIT_WYRMTAINTED		"wyrm_tainted"
 #define TRAIT_ILLEGAL_IDENTITY	"illegal_identity"
 #define TRAIT_LAZY				"lazy"
 #define TRAIT_HOMOSEXUAL		"homosexual"
@@ -175,9 +198,16 @@
 #define TRAIT_DIABLERIE			"diablerie"
 #define TRAIT_GULLET			"gullet"
 #define TRAIT_CHARMER			"charmer"
+#define TRAIT_UNBONDING         "unbonding"
+#define TRAIT_PERMAFANGS        "permafangs"
+#define TRAIT_ORGANOVORE		"organovore"
+#define TRAIT_SALUBRI_EYE_OPEN	"eye_open" //This is for Salubri Stuff in regards to oepning and closing it
+#define TRAIT_SALUBRI_EYE		"salubri_eye" //This is for whhen you want to like actually know if you have the eye or not
 #define TRAIT_UNMASQUERADE		"unmasquerade"	//For tzi clothing
 #define TRAIT_NONMASQUERADE		"nonmasquerade"	//For tzi mods
 #define TRAIT_GUNFIGHTER        "gunfighter"    //Halves firing delay and cooldown between burst fire shots
+#define TRAIT_WARRIOR			"warrior"
+
 /// Makes gambling incredibly effective, and causes random beneficial events to happen for the mob.
 #define TRAIT_SUPERNATURAL_LUCK	"supernatural_luck"
 /// Lets the mob block projectiles like bullets using only their hands.
@@ -271,6 +301,7 @@
 #define TRAIT_AGEUSIA			"ageusia"
 #define TRAIT_HEAVY_SLEEPER		"heavy_sleeper"
 #define TRAIT_NIGHT_VISION		"night_vision"
+#define TRAIT_ALT_NIGHT_VISION  "alt_night_vision"
 #define TRAIT_LIGHT_STEP		"light_step"
 #define TRAIT_SPIRITUAL			"spiritual"
 #define TRAIT_FAN_CLOWN			"fan_clown"
@@ -308,3 +339,11 @@
 
 //Trait for when a kindred turns on obfuscate. Supposed to make them invisible to normal sight.area
 #define TRAIT_OBFUSCATED "trait_obfuscated"
+
+//Stepping on glass shards immunity
+#define TRAIT_HARDENED_SOLES "trait_hardened_soles"
+//For handcuff breaking speed.
+#define TRAIT_CUFFBREAKER		"cuffbreaker"
+
+/// Properly wielded two handed item
+#define TRAIT_WIELDED "wielded"

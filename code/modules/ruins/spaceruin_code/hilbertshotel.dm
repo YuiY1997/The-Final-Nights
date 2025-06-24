@@ -247,6 +247,7 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 /turf/open/space/bluespace
 	name = "\proper bluespace hyperzone"
 	icon_state = "bluespace"
+	base_icon_state = "bluespace"
 	baseturfs = /turf/open/space/bluespace
 	flags_1 = NOJAUNT_1
 	explosion_block = INFINITY
@@ -257,7 +258,8 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 	update_icon_state()
 
 /turf/open/space/bluespace/update_icon_state()
-	icon_state = "bluespace"
+	icon_state = base_icon_state
+	return ..()
 
 /turf/open/space/bluespace/Entered(atom/movable/A)
 	. = ..()
@@ -293,22 +295,22 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 /turf/closed/indestructible/hoteldoor/attack_tk(mob/user)
 	return //need to be close.
 
-/turf/closed/indestructible/hoteldoor/attack_hand(mob/user)
+/turf/closed/indestructible/hoteldoor/attack_hand(mob/user, list/modifiers)
 	promptExit(user)
 
-/turf/closed/indestructible/hoteldoor/attack_animal(mob/user)
+/turf/closed/indestructible/hoteldoor/attack_animal(mob/user, list/modifiers)
 	promptExit(user)
 
-/turf/closed/indestructible/hoteldoor/attack_paw(mob/user)
+/turf/closed/indestructible/hoteldoor/attack_paw(mob/user, list/modifiers)
 	promptExit(user)
 
 /turf/closed/indestructible/hoteldoor/attack_hulk(mob/living/carbon/human/user)
 	promptExit(user)
 
-/turf/closed/indestructible/hoteldoor/attack_larva(mob/user)
+/turf/closed/indestructible/hoteldoor/attack_larva(mob/user, list/modifiers)
 	promptExit(user)
 
-/turf/closed/indestructible/hoteldoor/attack_slime(mob/user)
+/turf/closed/indestructible/hoteldoor/attack_slime(mob/user, list/modifiers)
 	promptExit(user)
 
 /turf/closed/indestructible/hoteldoor/attack_robot(mob/user)
@@ -335,7 +337,7 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 	desc = "Stop looking through the bluespace peephole."
 	button_icon_state = "cancel_peephole"
 
-/datum/action/peephole_cancel/Trigger()
+/datum/action/peephole_cancel/Trigger(trigger_flags)
 	. = ..()
 	to_chat(owner, "<span class='warning'>You move away from the peephole.</span>")
 	owner.reset_perspective()
@@ -509,7 +511,7 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 
 /obj/item/paper/crumpled/docslogs/Initialize()
 	. = ..()
-	info = {"<h4><center>Research Logs</center></h4>
+	default_raw_text = {"<h4><center>Research Logs</center></h4>
 	I might just be onto something here!<br>
 	The strange space-warping properties of bluespace have been known about for awhile now, but I might be on the verge of discovering a new way of harnessing it.<br>
 	It's too soon to say for sure, but this might be the start of something quite important!<br>
@@ -535,7 +537,7 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 
 /obj/item/paper/crumpled/robertsworkjournal
 	name = "Work Journal"
-	info = {"<h4>First Week!</h4>
+	default_raw_text = {"<h4>First Week!</h4>
 	First week on the new job. It's a secretarial position, but hey, whatever pays the bills. Plus it seems like some interesting stuff goes on here.<br>
 	Doc says its best that I don't openly talk about his research with others, I guess he doesn't want it getting out or something. I've caught myself slipping a few times when talking to others, it's hard not to brag about something this cool!<br>
 	I'm not really sure why I'm choosing to journal this. Doc seems to log everything. He says it's incase he discovers anything important.<br>
@@ -561,7 +563,7 @@ GLOBAL_VAR_INIT(hhMysteryRoomNumber, rand(1, 999999))
 
 /obj/item/paper/crumpled/bloody/docsdeathnote
 	name = "note"
-	info = {"This is it isn't it?<br>
+	default_raw_text = {"This is it isn't it?<br>
 	No one's coming to help, that much has become clear.<br>
 	Sure, it's lonely, but do I have much choice? At least I brought the analyzer with me, they shouldn't be able to find me without it.<br>
 	Who knows who's waiting for me out there. Its either die out there in their hands, or die a slower, slightly more comfortable death in here.<br>

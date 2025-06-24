@@ -5,7 +5,7 @@
 //	You do not need to raise this if you are adding new values that have sane defaults.
 //	Only raise this value when changing the meaning/format/name/layout of an existing value
 //	where you would want the updater procs below to run
-#define SAVEFILE_VERSION_MAX	38
+#define SAVEFILE_VERSION_MAX	42
 
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
@@ -87,8 +87,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if (!found_block_movement)
 			LAZYADD(key_bindings["Ctrl"], "block_movement")
 
+	if (current_version < 41)
+		LAZYADD(key_bindings["F"], "toggle_combat_mode")
+		LAZYADD(key_bindings["4"], "toggle_combat_mode")
+	if (current_version < 42)
+		LAZYADD(key_bindings["Space"], "hold_throw_mode")
+
 /datum/preferences/proc/update_character(current_version, savefile/S)
-	return
+	if(current_version < 40)
+		player_experience += true_experience
+		true_experience = 0
 
 /// checks through keybindings for outdated unbound keys and updates them
 /datum/preferences/proc/check_keybindings()
@@ -202,6 +210,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["pda_style"], pda_style)
 	READ_FILE(S["pda_color"], pda_color)
 
+	READ_FILE(S["player_experience"], player_experience)
+
+	READ_FILE(S["purchased_gear"], purchased_gear) // TFN ADDITION: loadout
+
 	// Custom hotkeys
 	READ_FILE(S["key_bindings"], key_bindings)
 	check_keybindings()
@@ -210,6 +222,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(hearted_until > world.realtime)
 		hearted = TRUE
 
+	READ_FILE(S["nsfw_content_pref"], nsfw_content_pref)
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		var/bacpath = "[path].updatebac" //todo: if the savefile version is higher then the server, check the backup, and give the player a prompt to load the backup
@@ -257,6 +270,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	pda_style		= sanitize_inlist(pda_style, GLOB.pda_styles, initial(pda_style))
 	pda_color		= sanitize_hexcolor(pda_color, 6, 1, initial(pda_color))
 	key_bindings 	= sanitize_keybindings(key_bindings)
+	purchased_gear  = sanitize_each_inlist(purchased_gear, GLOB.gear_datums) // TFN ADDITION: loadout
+	nsfw_content_pref = sanitize_integer(nsfw_content_pref, FALSE, TRUE, src::nsfw_content_pref)
+
+	player_experience   = sanitize_integer(player_experience, 0, 100000, 0)
 
 	if(needs_update >= 0) //save the updated version
 		var/old_default_slot = default_slot
@@ -334,6 +351,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pda_color"], pda_color)
 	WRITE_FILE(S["key_bindings"], key_bindings)
 	WRITE_FILE(S["hearted_until"], (hearted_until > world.realtime ? hearted_until : null))
+	WRITE_FILE(S["nsfw_content_pref"], nsfw_content_pref)
+	WRITE_FILE(S["player_experience"], player_experience)
+	WRITE_FILE(S["purchased_gear"], purchased_gear) // TFN ADDITION: loadout
 	return TRUE
 
 /datum/preferences/proc/load_character(slot)
@@ -387,8 +407,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(newtype)
 			auspice = new newtype
 
+	var/tribe_id
+	READ_FILE(S["tribe"], tribe_id)
+	if(tribe_id)
+		var/newtype = GLOB.tribes_list[tribe_id]
+		if(newtype)
+			tribe = new newtype
+
 	READ_FILE(S["breed"], breed)
-	READ_FILE(S["tribe"], tribe)
 	READ_FILE(S["werewolf_color"], werewolf_color)
 	READ_FILE(S["werewolf_scar"], werewolf_scar)
 	READ_FILE(S["werewolf_hair"], werewolf_hair)
@@ -401,8 +427,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["auspice_level"], auspice_level)
 	READ_FILE(S["humanity"], path_score)
 	READ_FILE(S["enlightement"], is_enlightened)
-	READ_FILE(S["exper"], exper)
-	READ_FILE(S["exper_plus"], exper_plus)
 	READ_FILE(S["true_experience"], true_experience)
 	READ_FILE(S["physique"], physique)
 	READ_FILE(S["dexterity"], dexterity)
@@ -426,8 +450,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["friend"], friend)
 	READ_FILE(S["enemy"], enemy)
 	READ_FILE(S["lover"], lover)
+	READ_FILE(S["show_flavor_text_when_masked"], show_flavor_text_when_masked)
 	READ_FILE(S["flavor_text"], flavor_text)
+	READ_FILE(S["flavor_text_nsfw"], flavor_text_nsfw)
 	READ_FILE(S["ooc_notes"], ooc_notes)
+	READ_FILE(S["character_notes"], character_notes)
 	READ_FILE(S["friend_text"], friend_text)
 	READ_FILE(S["enemy_text"], enemy_text)
 	READ_FILE(S["lover_text"], lover_text)
@@ -435,6 +462,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["generation"], generation)
 	READ_FILE(S["generation_bonus"], generation_bonus)
 	READ_FILE(S["masquerade"], masquerade)
+	READ_FILE(S["renownrank"], renownrank)
+	READ_FILE(S["honor"], honor)
+	READ_FILE(S["glory"], glory)
+	READ_FILE(S["wisdom"], wisdom)
 	READ_FILE(S["real_name"], real_name)
 	READ_FILE(S["werewolf_name"], werewolf_name)
 	READ_FILE(S["gender"], gender)
@@ -473,6 +504,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_moth_antennae"], features["moth_antennae"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
 	READ_FILE(S["persistent_scars"] , persistent_scars)
+	READ_FILE(S["experience_used_on_character"], experience_used_on_character)
+	READ_FILE(S["derangement"], derangement)
 	READ_FILE(S["dharma_type"], dharma_type)
 	READ_FILE(S["dharma_level"], dharma_level)
 	READ_FILE(S["po_type"], po_type)
@@ -488,6 +521,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		READ_FILE(S["feature_human_tail"], features["tail_human"])
 		READ_FILE(S["feature_human_ears"], features["ears"])
+
+
+	// TFN ADDITION START: loadout
+	READ_FILE(S["equipped_gear"], equipped_gear)
+	if(config) //This should *probably* always be there, but just in case.
+		if(length(equipped_gear) > CONFIG_GET(number/max_loadout_items))
+			to_chat(parent, span_userdanger("Loadout maximum items exceeded in loaded slot, Your loadout has been cleared! You had [length(equipped_gear)]/[CONFIG_GET(number/max_loadout_items)] equipped items!"))
+			equipped_gear = list()
+			WRITE_FILE(S["equipped_gear"], equipped_gear)
+	// TFN ADDITION END
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)
@@ -510,7 +553,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
 	if(SSjob)
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job in sort_list(SSjob.occupations, /proc/cmp_job_display_asc))
 			if(alt_titles_preferences[job.title])
 				if(!(alt_titles_preferences[job.title] in job.alt_titles))
 					alt_titles_preferences.Remove(job.title)
@@ -529,7 +572,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!real_name)
 		real_name = random_unique_name(gender)
 //	if(!clane)
-//		var/newtype = GLOB.clanes_list["Brujah"]
+//		var/newtype = GLOB.clanes_list[CLAN_BRUJAH]
 //		clane = new newtype()
 
 	//Prevent Wighting upon joining a round
@@ -545,10 +588,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(!custom_names[custom_name_id])
 			custom_names[custom_name_id] = get_default_name(custom_name_id)
 
-	if(!features["mcolor"] || features["mcolor"] == "#000")
-		features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	if(!features["mcolor"] || features["mcolor"] == "#000000")
+		features["mcolor"] = pick("#FFFFFF","#7F7F7F", "#7FFF7F", "#7F7FFF", "#FF7F7F", "#7FFFFF", "#FF7FFF", "#FFFF7F")
 
-	if(!features["ethcolor"] || features["ethcolor"] == "#000")
+	if(!features["ethcolor"] || features["ethcolor"] == "#000000")
 		features["ethcolor"] = GLOB.color_list_ethereal[pick(GLOB.color_list_ethereal)]
 
 	randomise = SANITIZE_LIST(randomise)
@@ -572,14 +615,15 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	archetype 		= sanitize_inlist(archetype, subtypesof(/datum/archetype))
 
 	breed			= sanitize_inlist(breed, list("Homid", "Lupus", "Metis"))
-	tribe			= sanitize_inlist(tribe, list("Wendigo", "Glasswalkers", "Black Spiral Dancers"))
 	werewolf_color	= sanitize_inlist(werewolf_color, list("black", "gray", "red", "white", "ginger", "brown"))
 	werewolf_scar	= sanitize_integer(werewolf_scar, 0, 7, initial(werewolf_scar))
 	werewolf_hair	= sanitize_integer(werewolf_hair, 0, 4, initial(werewolf_hair))
-	werewolf_hair_color		= sanitize_ooccolor(werewolf_hair_color, 3, 0)
-	werewolf_eye_color		= sanitize_ooccolor(werewolf_eye_color, 3, 0)
+	werewolf_hair_color		= sanitize_hexcolor(werewolf_hair_color)
+	werewolf_eye_color		= sanitize_hexcolor(werewolf_eye_color)
 	flavor_text	= sanitize_text(flavor_text)
+	flavor_text_nsfw = sanitize_text(flavor_text_nsfw)
 	ooc_notes = sanitize_text(ooc_notes)
+	character_notes = sanitize_text(character_notes)
 	socks			= sanitize_inlist(socks, GLOB.socks_list)
 	age				= sanitize_integer(age, AGE_MIN, AGE_MAX, initial(age))
 	diablerist				= sanitize_integer(diablerist, 0, 1, initial(diablerist))
@@ -592,8 +636,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	slotlocked			= sanitize_integer(slotlocked, 0, 1, initial(slotlocked))
 	path_score				= sanitize_integer(path_score, 0, 10, initial(path_score))
 	is_enlightened				= sanitize_integer(is_enlightened, 0, 1, initial(is_enlightened))
-	exper				= sanitize_integer(exper, 0, 99999999, initial(exper))
-	exper_plus				= sanitize_integer(exper_plus, 0, 99999999, initial(exper_plus))
 	true_experience				= sanitize_integer(true_experience, 0, 99999999, initial(true_experience))
 	physique				= sanitize_integer(physique, 1, 10, initial(physique))
 	dexterity				= sanitize_integer(dexterity, 1, 10, initial(dexterity))
@@ -629,21 +671,25 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	lover				= sanitize_integer(lover, 0, 1, initial(lover))
 	masquerade				= sanitize_integer(masquerade, 0, 5, initial(masquerade))
 	// TFN EDIT START: gen tweaks
-	generation				= sanitize_integer(generation, 8, 14, initial(generation))
+	generation				= sanitize_integer(generation, 7, 14, initial(generation))
 	generation_bonus				= sanitize_integer(generation_bonus, 0, 5, initial(generation_bonus))
+	glory = sanitize_integer(glory, 0, 10, initial(glory))
+	wisdom = sanitize_integer(wisdom, 0, 10, initial(wisdom))
+	honor = sanitize_integer(honor, 0, 10, initial(honor))
+	renownrank = sanitize_integer(renownrank, 0, 5, initial(renownrank))
 	// TFN EDIT END
-	hair_color			= sanitize_hexcolor(hair_color, 3, 0)
-	facial_hair_color			= sanitize_hexcolor(facial_hair_color, 3, 0)
-	underwear_color			= sanitize_hexcolor(underwear_color, 3, 0)
-	eye_color		= sanitize_hexcolor(eye_color, 3, 0)
+	hair_color			= sanitize_hexcolor(hair_color)
+	facial_hair_color			= sanitize_hexcolor(facial_hair_color)
+	underwear_color			= sanitize_hexcolor(underwear_color)
+	eye_color		= sanitize_hexcolor(eye_color)
 	skin_tone		= sanitize_inlist(skin_tone, GLOB.skin_tones)
 	backpack			= sanitize_inlist(backpack, GLOB.backpacklist, initial(backpack))
 	jumpsuit_style	= sanitize_inlist(jumpsuit_style, GLOB.jumpsuitlist, initial(jumpsuit_style))
 	uplink_spawn_loc = sanitize_inlist(uplink_spawn_loc, GLOB.uplink_spawn_loc_list, initial(uplink_spawn_loc))
 	clane_accessory = sanitize_inlist(clane_accessory, clane.accessories, null)
 	playtime_reward_cloak = sanitize_integer(playtime_reward_cloak)
-	features["mcolor"]	= sanitize_hexcolor(features["mcolor"], 3, 0)
-	features["ethcolor"]	= copytext_char(features["ethcolor"], 1, 7)
+	features["mcolor"]	= sanitize_hexcolor(features["mcolor"])
+	features["ethcolor"]	= sanitize_hexcolor(features["ethcolor"])
 	features["tail_lizard"]	= sanitize_inlist(features["tail_lizard"], GLOB.tails_list_lizard)
 	features["tail_human"] 	= sanitize_inlist(features["tail_human"], GLOB.tails_list_human, "None")
 	features["snout"]	= sanitize_inlist(features["snout"], GLOB.snouts_list)
@@ -656,6 +702,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["moth_wings"] 	= sanitize_inlist(features["moth_wings"], GLOB.moth_wings_list, "Plain")
 	features["moth_antennae"] 	= sanitize_inlist(features["moth_antennae"], GLOB.moth_antennae_list, "Plain")
 	features["moth_markings"] 	= sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
+	experience_used_on_character = sanitize_integer(experience_used_on_character, 0, 100000, 0)
+	equipped_gear	= sanitize_each_inlist(equipped_gear, GLOB.gear_datums) // TFN ADDITION: loadout
+
+	derangement = sanitize_integer(derangement, 0, 1, 1)
 
 	persistent_scars = sanitize_integer(persistent_scars)
 
@@ -714,7 +764,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["version"]			, SAVEFILE_VERSION_MAX)	//load_character will sanitize any bad data, so assume up-to-date.)
 
 	WRITE_FILE(S["breed"], breed)
-	WRITE_FILE(S["tribe"], tribe)
+	WRITE_FILE(S["tribe"], tribe.name)
 	WRITE_FILE(S["werewolf_color"], werewolf_color)
 	WRITE_FILE(S["werewolf_scar"], werewolf_scar)
 	WRITE_FILE(S["werewolf_hair"], werewolf_hair)
@@ -727,9 +777,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["diablerist"]			, diablerist)
 	WRITE_FILE(S["humanity"]			, path_score)
 	WRITE_FILE(S["enlightement"]			, is_enlightened)
-	WRITE_FILE(S["exper"]			, exper)
-	WRITE_FILE(S["exper_plus"]			, exper_plus)
-	WRITE_FILE(S["true_experience"]			, true_experience)
 	WRITE_FILE(S["auspice_level"]			, auspice_level)
 	WRITE_FILE(S["physique"]		, physique)
 	WRITE_FILE(S["dexterity"]		, dexterity)
@@ -753,12 +800,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["friend"]			, friend)
 	WRITE_FILE(S["enemy"]			, enemy)
 	WRITE_FILE(S["lover"]			, lover)
+	WRITE_FILE(S["show_flavor_text_when_masked"], show_flavor_text_when_masked)
 	WRITE_FILE(S["flavor_text"], flavor_text)
+	WRITE_FILE(S["flavor_text_nsfw"], flavor_text_nsfw)
 	WRITE_FILE(S["ooc_notes"], ooc_notes)
+	WRITE_FILE(S["character_notes"], character_notes)
 	WRITE_FILE(S["friend_text"]			, friend_text)
 	WRITE_FILE(S["enemy_text"]			, enemy_text)
 	WRITE_FILE(S["lover_text"]			, lover_text)
 	WRITE_FILE(S["reason_of_death"]			, reason_of_death)
+	WRITE_FILE(S["renownrank"]			, renownrank)
+	WRITE_FILE(S["honor"]			, honor)
+	WRITE_FILE(S["glory"]			, glory)
+	WRITE_FILE(S["wisdom"]			, wisdom)
 	WRITE_FILE(S["clane"]			, clane.name)
 	WRITE_FILE(S["generation"]			, generation)
 	WRITE_FILE(S["generation_bonus"]			, generation_bonus)
@@ -804,6 +858,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_moth_antennae"]			, features["moth_antennae"])
 	WRITE_FILE(S["feature_moth_markings"]		, features["moth_markings"])
 	WRITE_FILE(S["persistent_scars"]			, persistent_scars)
+	WRITE_FILE(S["experience_used_on_character"], experience_used_on_character)
+	WRITE_FILE(S["derangement"], derangement)
 	WRITE_FILE(S["dharma_type"], dharma_type)
 	WRITE_FILE(S["dharma_level"], dharma_level)
 	WRITE_FILE(S["po_type"], po_type)
@@ -822,6 +878,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	WRITE_FILE(S["preferred_ai_core_display"] ,  preferred_ai_core_display)
 	WRITE_FILE(S["prefered_security_department"] , prefered_security_department)
+
+	// TFN ADDITION START: Getting rid of the previewed items before writing
+	if(equipped_gear)
+		for(var/gear in equipped_gear)
+			if(!(gear in purchased_gear))
+				equipped_gear -= gear
+	WRITE_FILE(S["equipped_gear"], equipped_gear)
+	// TFN ADDITION END
 
 	//Jobs
 	WRITE_FILE(S["joblessrole"]		, joblessrole)

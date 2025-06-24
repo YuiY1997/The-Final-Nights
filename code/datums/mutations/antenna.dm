@@ -76,7 +76,7 @@
 				if(nlog_type & LOG_SAY)
 					var/list/reversed = log_source[log_type]
 					if(islist(reversed))
-						say_log = reverseRange(reversed.Copy())
+						say_log = reverse_range(reversed.Copy())
 						break
 			if(LAZYLEN(say_log))
 				for(var/spoken_memory in say_log)
@@ -90,7 +90,7 @@
 					to_chat(user, "<span class='notice'>[recent_speech[spoken_memory]]</span>")
 			if(iscarbon(M))
 				var/mob/living/carbon/human/H = M
-				to_chat(user, "<span class='boldnotice'>You find that their intent is to [H.a_intent]...</span>")
+				to_chat(user, "<span class='boldnotice'>You find that their intent is to [H.combat_mode ? "Harm" : "Help"]...</span>")
 				if(H.mind)
 					to_chat(user, "<span class='boldnotice'>You uncover that [H.p_their()] true identity is [H.mind.name].</span>")
 		else

@@ -33,7 +33,7 @@
 
 /obj/item/paper/fluff/awaymissions/academy/console_maint
 	name = "Console Maintenance"
-	info = "We're upgrading to the latest mainframes for our consoles, the shipment should be in before spring break is over!"
+	default_raw_text = "We're upgrading to the latest mainframes for our consoles, the shipment should be in before spring break is over!"
 
 /obj/item/paper/fluff/awaymissions/academy/class/automotive
 	name = "Automotive Repair 101"
@@ -46,19 +46,19 @@
 
 /obj/item/paper/fluff/awaymissions/academy/grade/aplus
 	name = "Summoning Midterm Exam"
-	info = "Grade: A+ Educator's Notes: Excellent form."
+	default_raw_text = "Grade: A+ Educator's Notes: Excellent form."
 
 /obj/item/paper/fluff/awaymissions/academy/grade/bminus
 	name = "Summoning Midterm Exam"
-	info = "Grade: B- Educator's Notes: Keep applying yourself, you're showing improvement."
+	default_raw_text = "Grade: B- Educator's Notes: Keep applying yourself, you're showing improvement."
 
 /obj/item/paper/fluff/awaymissions/academy/grade/dminus
 	name = "Summoning Midterm Exam"
-	info = "Grade: D- Educator's Notes: SEE ME AFTER CLASS."
+	default_raw_text = "Grade: D- Educator's Notes: SEE ME AFTER CLASS."
 
 /obj/item/paper/fluff/awaymissions/academy/grade/failure
 	name = "Pyromancy Evaluation"
-	info = "Current Grade: F. Educator's Notes: No improvement shown despite multiple private lessons.  Suggest additional tutelage."
+	default_raw_text = "Current Grade: F. Educator's Notes: No improvement shown despite multiple private lessons.  Suggest additional tutelage."
 
 /obj/item/clothing/glasses/meson/truesight
 	name = "The Lens of Truesight"
@@ -388,9 +388,13 @@
 	. = ..()
 	AddElement(/datum/element/update_icon_blocker)
 
-/obj/structure/ladder/unbreakable/rune/show_fluff_message(up,mob/user)
-	user.visible_message("<span class='notice'>[user] activates \the [src].</span>", "<span class='notice'>You activate \the [src].</span>")
+/obj/structure/ladder/unbreakable/rune/show_initial_fluff_message(mob/user, going_up)
+	balloon_alert(user, "activating...")
 
-/obj/structure/ladder/unbreakable/rune/use(mob/user, is_ghost=FALSE)
-	if(is_ghost || !(user.mind in SSticker.mode.wizards))
+/obj/structure/ladder/unbreakable/rune/show_final_fluff_message(mob/user, obj/structure/ladder/destination, going_up)
+	visible_message(span_notice("[user] activates [src] and teleports away."))
+	balloon_alert(user, "warped in")
+
+/obj/structure/ladder/unbreakable/rune/use(mob/user, going_up = TRUE)
+	if(!(user.mind in SSticker.mode.wizards))
 		..()

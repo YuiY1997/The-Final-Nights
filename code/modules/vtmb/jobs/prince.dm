@@ -24,12 +24,14 @@
 
 	display_order = JOB_DISPLAY_ORDER_PRINCE
 
-	minimal_generation = 10	//Uncomment when players get exp enough
+	minimal_generation = 10
+//	minimum_character_age = 150 //Uncomment if age-restriction wanted
+	minimum_vampire_age = 75
+
 	minimal_masquerade = 5
 	allowed_species = list("Vampire")
-	allowed_bloodlines = list("Tremere", "Ventrue", "Nosferatu", "Toreador", "Malkavian", "Brujah", "Lasombra", "Gangrel", "True Brujah", "Tzimisce")
+	allowed_bloodlines = list(CLAN_TREMERE, CLAN_VENTRUE, CLAN_NOSFERATU, CLAN_TOREADOR, CLAN_MALKAVIAN, CLAN_BRUJAH, CLAN_LASOMBRA, CLAN_GANGREL, CLAN_TRUE_BRUJAH)
 
-	my_contact_is_important = TRUE
 	known_contacts = list(
 		"Sheriff",
 		"Seneschal",
@@ -45,7 +47,7 @@
 
 /datum/job/vamp/prince/announce(mob/living/carbon/human/H)
 	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, PROC_REF(minor_announce), "Prince [H.real_name] has arrived in the district!"))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce), "Prince [H.real_name] has arrived in the district!"))
 
 /datum/outfit/job/prince
 	name = "Prince"

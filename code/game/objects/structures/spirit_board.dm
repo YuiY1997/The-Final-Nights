@@ -3,6 +3,7 @@
 	desc = "A wooden board with letters etched into it, used in seances."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "spirit_board"
+	resistance_flags = FLAMMABLE
 	density = TRUE
 	anchored = FALSE
 	var/virgin = TRUE //applies especially to admins
@@ -14,7 +15,7 @@
 	desc = "[initial(desc)] The planchette is sitting at \"[planchette]\"."
 	. = ..()
 
-/obj/structure/spirit_board/attack_hand(mob/user)
+/obj/structure/spirit_board/attack_hand(mob/user, list/modifiers)
 	. = ..()
 	if(.)
 		return

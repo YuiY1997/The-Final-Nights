@@ -30,7 +30,7 @@
 /datum/discipline_power/obtenebration/shadow_play/activate(target)
 	. = ..()
 	shadow = new(target)
-	shadow.set_light(3, -7)
+	shadow.set_light(discipline.level+2, -10)
 
 /datum/discipline_power/obtenebration/shadow_play/deactivate(target)
 	. = ..()
@@ -64,13 +64,12 @@
 	desc = "Use shadows as your arms to harm and grab others from afar."
 
 	level = 3
-	check_flags = DISC_CHECK_CONSCIOUS | DISC_CHECK_CAPABLE | DISC_CHECK_FREE_HAND | DISC_CHECK_IMMOBILE
+	check_flags = DISC_CHECK_CAPABLE | DISC_CHECK_IMMOBILE
 
 	violates_masquerade = TRUE
 
-	cancelable = TRUE
-	duration_length = 30 SECONDS
-	cooldown_length = 15 SECONDS
+	toggled = TRUE
+	duration_length = 6 TURNS
 
 /datum/discipline_power/obtenebration/arms_of_the_abyss/activate()
 	. = ..()
@@ -116,6 +115,7 @@
 
 	level = 5
 	check_flags = DISC_CHECK_CONSCIOUS | DISC_CHECK_CAPABLE | DISC_CHECK_IMMOBILE | DISC_CHECK_LYING
+	vitae_cost = 0
 
 	violates_masquerade = TRUE
 
@@ -141,7 +141,7 @@
 /datum/crafting_recipe/mystome
 	name = "Abyss Mysticism Tome"
 	time = 10 SECONDS
-	reqs = list(/obj/item/paper = 3, /obj/item/drinkable_bloodpack = 1)
+	reqs = list(/obj/item/paper = 3, /obj/item/reagent_containers/blood = 1)
 	result = /obj/item/mystic_tome
 	always_available = FALSE
 	category = CAT_MISC
@@ -155,7 +155,7 @@
 	var/drawing = FALSE
 	var/level = 1
 
-/datum/action/mysticism/Trigger()
+/datum/action/mysticism/Trigger(trigger_flags)
 	. = ..()
 	var/mob/living/carbon/human/H = owner
 	if(H.bloodpool < 2)
