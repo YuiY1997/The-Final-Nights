@@ -500,3 +500,64 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 	custom_materials = list(/datum/material/plastic = 2000)
 	break_chance = 25
 	origin_type = /obj/structure/chair/plastic
+
+/obj/structure/chair/vintage1
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair1"
+
+/obj/structure/chair/vintage2
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair2"
+
+/obj/structure/chair/vintage3
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair3"
+
+/obj/structure/chair/vintage4
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair4"
+
+/obj/structure/chair/vintage5
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair5"
+
+/obj/structure/chair/vintage6
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair6"
+
+/obj/structure/chair/vintage7
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair7"
+
+/obj/structure/chair/vintage8
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "chair8"
+
+
+/obj/structure/chair/vintage/leatherfancy
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "comm"
+
+/obj/structure/chair/stonethrone
+	name = "chair"
+	desc = "You sit in this. Either by will or force."
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "thronechair"

@@ -1367,3 +1367,434 @@
 /turf/open/floor/plating/Initialize()
 	..()
 	base_icon_state = icon_state
+
+//1930s sprites
+
+
+
+//floors
+
+/turf/open/floor/plating/redcarpet
+	gender = PLURAL
+	name = "red carpet"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "redcarpetm"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+
+/turf/open/floor/plating/redcarpet/left
+	gender = PLURAL
+	name = "red carpet"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "redcarpetl"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/redcarpet/right
+	gender = PLURAL
+	name = "red carpet"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "redcarpetr"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/tilegreen
+	gender = PLURAL
+	name = "green tile"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "greentile"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/checkerleft
+	gender = PLURAL
+	name = "checker floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "tilecheckerleft1"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/checkerleft
+	icon_state = "tilecheckerleft1"
+
+/turf/open/floor/plating/checkerleft/Initialize()
+	.=..()
+	icon_state = "tilecheckerleft[rand(1, 2)]"
+
+/turf/open/floor/plating/checkerright
+	gender = PLURAL
+	name = "checker floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "tilecheckerright1"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/checkerright
+	icon_state = "tilecheckerright1"
+
+/turf/open/floor/plating/checkerleft/Initialize()
+	.=..()
+	icon_state = "tilecheckerright[rand(1, 3)]"
+
+/turf/open/floor/plating/mosaic
+	gender = PLURAL
+	name = "mosaic floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "mosaic"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/mosaicsingle
+	gender = PLURAL
+	name = "mosaic floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "mosaicsingle"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/mosaicsingleinverted
+	gender = PLURAL
+	name = "mosaic floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "mosaicsingleinverted"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/mosaicspiral
+	gender = PLURAL
+	name = "mosaic floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "mosaicspiral"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/mosaicsdiamond
+	gender = PLURAL
+	name = "mosaic floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "mosaicdiamond"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/blackstonefloor
+	gender = PLURAL
+	name = "stone floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "stoney"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/blackstonefloor2
+	gender = PLURAL
+	name = "stone floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "stone_old"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/blackstonefloor3
+	gender = PLURAL
+	name = "stone floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "stoning"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/redstonefloor
+	gender = PLURAL
+	name = "stone floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "stonefloor"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/stoneredbrickfloor
+	gender = PLURAL
+	name = "stone floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "stonefloor4"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+
+/turf/open/floor/plating/redrugcarpet
+	gender = PLURAL
+	name = "red rug"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "carpet2red"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/redrugcarpetside
+	gender = PLURAL
+	name = "red rug"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "carpet2redside"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/bluerugcarpet
+	gender = PLURAL
+	name = "blue rug"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "carpet2"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/bluerugcarpetside
+	gender = PLURAL
+	name = "blue rug"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "carpet2side"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/royalbluerugcarpet
+	gender = PLURAL
+	name = "blue rug"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "bluecarpet2"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/royalbluerugcarpetside
+	gender = PLURAL
+	name = "blue rug"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "bluecarpet2side"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_PARKET
+	barefootstep = FOOTSTEP_PARKET
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/rustyplating
+	gender = PLURAL
+	name = "metal floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "rustyplating"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/plating/rustyplating2
+	gender = PLURAL
+	name = "metal floor"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "rusty_ship2"
+	flags_1 = NONE
+	attachment_holes = FALSE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_TROTUAR
+	barefootstep = FOOTSTEP_TROTUAR
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+//walls for 1930s (we hate 3/4 view here)
+
+/turf/closed/wall/vampwall/oldstonebrick
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon_state = "brickstone-0"
+	icon = 'code/modules/wod13/walls.dmi'
+	base_icon_state = "brickstone"
+
+/turf/closed/wall/vampwall/darksewerwalls
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "grim-0"
+	base_icon_state = "grim"
+
+/turf/closed/wall/vampwall/industrialmetal
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "rwall-0"
+	base_icon_state = "rwall"
+
+/turf/closed/wall/vampwall/vintageinterior
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "interior-0"
+	base_icon_state = "interior"
+
+/turf/closed/wall/vampwall/darkconcrete
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "concrete-0"
+	base_icon_state = "concrete"
+
+/turf/closed/wall/cathedralbrick
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-brick-0"
+
+/turf/closed/wall/cathedralbrick/one
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-brick-1"
+
+/turf/closed/wall/cathedralbrick/two
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-brick-2"
+
+/turf/closed/wall/cathedralbrick/three
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-brick-3"
+
+/turf/closed/wall/cathedralsmooth
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-smooth-0"
+
+/turf/closed/wall/cathedralsmooth/one
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-smooth-1"
+
+/turf/closed/wall/cathedralsmooth/two
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-smooth-2"
+
+/turf/closed/wall/cathedralpillar
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-pillar"
+
+/turf/closed/wall/cathedralwall
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-2"
+
+/turf/closed/wall/cathedralwall/two
+	name = "wall"
+	desc = "A huge chunk of bricks used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cathedral-3"

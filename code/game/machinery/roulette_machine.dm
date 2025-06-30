@@ -21,7 +21,7 @@
 /obj/machinery/roulette
 	name = "Roulette Table"
 	desc = "A computerized roulette table. Swipe your ID to play or register yourself as owner!"
-	icon = 'icons/obj/machines/roulette.dmi'
+	icon = 'code/modules/wod13/64x32.dmi'
 	icon_state = "idle"
 	density = TRUE
 	use_power = IDLE_POWER_USE

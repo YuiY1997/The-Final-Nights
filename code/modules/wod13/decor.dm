@@ -1403,6 +1403,34 @@
 	icon = 'code/modules/wod13/64x64.dmi'
 	icon_state = "kover"
 
+/obj/effect/decal/carpet/black
+	name = "carpet"
+	pixel_w = -16
+	pixel_z = -16
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "koverblack"
+
+/obj/effect/decal/carpet/purple
+	name = "carpet"
+	pixel_w = -16
+	pixel_z = -16
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "koverpurple"
+
+/obj/effect/decal/carpet2
+	name = "rug"
+	pixel_w = -16
+	pixel_z = -16
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "blackcarpet"
+
+/obj/effect/decal/carpet3
+	name = "rug"
+	pixel_w = -16
+	pixel_z = -16
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "greencarpet"
+
 /obj/structure/vamprocks
 	name = "rock"
 	desc = "Rokk."
@@ -1529,3 +1557,288 @@
 			burying = FALSE
 		else
 			burying = FALSE
+
+//1930s sprites
+//structures
+
+/obj/structure/cathedralaltar
+	name = "stonework"
+	desc = "Gives some light to the streets."
+	icon = 'code/modules/wod13/32x96.dmi'
+	icon_state = "altar"
+	plane = GAME_PLANE
+	layer = SPACEVINE_LAYER
+	anchored = TRUE
+	density = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/structure/cathedralrelief
+	name = "stonework"
+	icon = 'code/modules/wod13/32x96.dmi'
+	icon_state = "relief"
+	plane = GAME_PLANE
+	layer = SPACEVINE_LAYER
+	anchored = TRUE
+	density = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/structure/vampstatue/cathedralangelstatue
+	name = "stonework"
+	icon = 'code/modules/wod13/32x64.dmi'
+	icon_state = "angel"
+	plane = GAME_PLANE
+	layer = SPACEVINE_LAYER
+	anchored = TRUE
+	density = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/structure/microphone
+	name = "microphone"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "microphone"
+	plane = GAME_PLANE
+	layer = ABOVE_ALL_MOB_LAYER
+	anchored = TRUE
+	density = FALSE
+
+
+/obj/structure/hookah
+	name = "hookah"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "hookah"
+	plane = GAME_PLANE
+	layer = ABOVE_ALL_MOB_LAYER
+	anchored = TRUE
+	density = FALSE
+
+/obj/structure/hookah/large1
+	name = "hookah"
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "zbuski1"
+	plane = GAME_PLANE
+	layer = ABOVE_ALL_MOB_LAYER
+	anchored = TRUE
+	density = FALSE
+
+/obj/structure/hookah/large2
+	name = "hookah"
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "zbuski"
+	plane = GAME_PLANE
+	layer = ABOVE_ALL_MOB_LAYER
+	anchored = TRUE
+	density = FALSE
+
+
+
+//walll
+
+/obj/effect/decal/redcross
+	name = "redcross"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "redcross"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/painting/long
+	name = "paintinglong"
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "painting"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/painting/long2
+	name = "redcross"
+	icon = 'code/modules/wod13/64x64.dmi'
+	icon_state = "painting2"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+
+/obj/effect/decal/cathedralstonefacade
+	name = "facade"
+	icon = 'code/modules/wod13/32x64.dmi'
+	icon_state = "facade"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+
+/obj/effect/decal/cathedralstainedglass
+	name = "stained glass"
+	icon = 'code/modules/wod13/32x96.dmi'
+	icon_state = "stainedglass"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedralstainedglasssmall
+	name = "stained glass"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "stainedglasssmall"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedraltrim
+	name = "marble trim"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-trim"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+
+/obj/effect/decal/cathedralvertical
+	name = "marble trim"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-vertical"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedralhorizontal
+	name = "marble trim"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-horizontal"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedralarch
+	name = "marble trim"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-arch"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedralsmallrelief
+	name = "marble relief"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-relief-small-1"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedralsmallrelief/two
+	name = "marble relief"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-relief-small-2"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedralsmallrelief/three
+	name = "marble relief"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-relief-small-3"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/cathedralsmallrelief/four
+	name = "marble relief"
+	desc = "Damn that's fancy."
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "cathedral-relief-small-4"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/subwaylightbottom
+	name = "stained glass"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "subwaybottom"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/subwaylight
+	name = "stained glass"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "subwaytop"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+/obj/effect/decal/subwaydark
+	name = "stained glass"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "subwaybottomdark"
+	plane = GAME_PLANE
+	layer = ABOVE_NORMAL_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
+
+
+//floor
+
+/obj/effect/decal/woodborder
+	name = "wooden border"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "borderfall"
+
+/obj/effect/decal/woodpath
+	name = "wooden border"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "trench_flooring"
+
+/obj/effect/decal/redcarpetstair
+	name = "red carpeted stairs"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "redcarpetstairm"
+
+/obj/effect/decal/redcarpetstair/left/
+	name = "red carpeted stairs"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "redcarpetstairl"
+
+/obj/effect/decal/redcarpetstair/right/
+	name = "red carpet stairs"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "redcarpetstairr"
+
+/obj/effect/decal/stoneborder
+	name = "stone border"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "sborder1"
+
+/obj/effect/decal/stoneborder/corner
+	name = "stone border"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "sborder2"
+
+/obj/effect/decal/metalborder
+	name = "stone border"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "halfplating"
+
+/obj/effect/decal/metalborder/quarter
+	name = "stone border"
+	icon = 'code/modules/wod13/tiles.dmi'
+	icon_state = "quarterplating"

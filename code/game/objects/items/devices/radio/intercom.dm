@@ -147,3 +147,19 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom, 26)
 
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/prison, 26)
 MAPPING_DIRECTIONAL_HELPERS(/obj/item/radio/intercom/chapel, 26)
+
+/obj/item/radio/intercom/radio
+	name = "radio"
+	anonymize = TRUE
+	frequency = 1337
+	broadcasting = FALSE
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "radio_on"
+
+/obj/item/radio/intercom/radiolarge
+	name = "radio"
+	anonymize = TRUE
+	frequency = 1337
+	broadcasting = FALSE
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "large_radio_on"

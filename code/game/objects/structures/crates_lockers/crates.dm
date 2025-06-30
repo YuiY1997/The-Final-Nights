@@ -96,6 +96,19 @@
 	open_sound_volume = 25
 	close_sound_volume = 50
 
+/obj/structure/closet/crate/fancycoffin
+	name = "coffin"
+	desc = "It's a burial receptacle for the dearly departed."
+	icon_state = "fancycoffin"
+	resistance_flags = FIRE_PROOF
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+
 /obj/structure/closet/crate/maint
 
 /obj/structure/closet/crate/maint/PopulateContents()
@@ -294,3 +307,165 @@
 	. = ..()
 	for(var/i in 1 to 4)
 		new /obj/effect/spawner/lootdrop/decorations_spawner(src)
+
+/obj/structure/closet/crate/drawers1
+	name = "drawers"
+	desc = "Wooden drawers for storing items."
+	icon_state = "drawer1"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE
+
+/obj/structure/closet/crate/drawers2
+	name = "drawers"
+	desc = "Wooden drawers for storing items."
+	icon_state = "drawer2"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE
+
+/obj/structure/closet/crate/drawers3
+	name = "drawers"
+	desc = "Wooden drawers for storing items."
+	icon_state = "drawer3"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE
+
+/obj/structure/closet/crate/drawers4
+	name = "drawers"
+	desc = "Wooden drawers for storing items."
+	icon_state = "drawer4"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE
+
+/obj/structure/closet/crate/drawers5
+	name = "drawers"
+	desc = "Wooden drawers for storing items."
+	icon_state = "drawerV"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE
+
+/obj/structure/closet/crate/wardrobe
+	name = "wardrobe"
+	desc = "A wooden closet for storing items."
+	icon_state = "fancy"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+
+/obj/structure/closet/crate/wardrobeluxury
+	name = "wardrobe"
+	desc = "A wooden closet for storing items."
+	icon_state = "luxury"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+
+/obj/structure/closet/crate/wardrobesimple
+	name = "wardrobe"
+	desc = "A wooden closet for storing items."
+	icon_state = "wood"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+
+/obj/structure/closet/crate/wardrobenarnia
+	name = "wardrobe"
+	desc = "A wooden closet for storing items."
+	icon_state = "narnia"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+
+/obj/structure/closet/crate/wardrobemounted
+	name = "wardrobe"
+	desc = "A wooden closet for storing items."
+	icon_state = "closet3"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE
+
+/obj/structure/closet/crate/chest
+	name = "chest"
+	desc = "A wooden chest for storing items."
+	icon_state = "chest"
+	resistance_flags = FLAMMABLE
+	max_integrity = 70
+	material_drop = /obj/item/stack/sheet/mineral/wood
+	material_drop_amount = 5
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE
+
+
+/obj/structure/closet/crate/wickerbasket
+	name = "chest"
+	desc = "A woven basket for storing items."
+	icon_state = "basket"
+	resistance_flags = FLAMMABLE
+	open_sound = 'sound/machines/wooden_closet_open.ogg'
+	close_sound = 'sound/machines/wooden_closet_close.ogg'
+	open_sound_volume = 25
+	close_sound_volume = 50
+	anchored = TRUE

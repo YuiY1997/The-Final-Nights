@@ -56,3 +56,50 @@
 
 /obj/structure/chair/sofa/corp/corner
 	icon_state = "corp_sofacorner"
+
+//1930s
+
+/obj/structure/chair/sofa/vintage
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchaleft"
+
+/obj/structure/chair/sofa/vintage/redleft
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchaleft"
+
+/obj/structure/chair/sofa/vintage/redright
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "coucharight"
+
+/obj/structure/chair/sofa/vintage/blackleft
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchablackaleft"
+
+/obj/structure/chair/sofa/vintage/blackright
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchablackaright"
+
+/obj/structure/chair/sofa/vintage/greenleft
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchgreenleft"
+
+/obj/structure/chair/sofa/vintage/greenright
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchgreenright"
+
+/obj/structure/chair/sofa/vintage/magentaleft
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchamagentaleft"
+
+/obj/structure/chair/sofa/vintage/magentaright
+	name = "sofa"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "couchamagentaright"
