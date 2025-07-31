@@ -1009,7 +1009,77 @@
 	resistance_flags = INDESTRUCTIBLE
 	desc = "A table."
 
+/obj/structure/rack/vintagetablepicnic
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicmiddle"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
 
+/obj/structure/rack/vintagetablepicnic/north
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicnorth"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablepicnic/south
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicsouth"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablepicnic/west
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicwest"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablepicnic/east
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picniceast"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablepicnic/northeast
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicnortheast"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablepicnic/northwest
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicnorthwest"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablepicnic/southwest
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicsouthwest"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablepicnic/southeast
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "picnicsoutheast"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
 
 /obj/bacotell
 	name = "Baco Tell"
