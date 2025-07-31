@@ -1739,6 +1739,27 @@
 	icon_state = "concrete-0"
 	base_icon_state = "concrete"
 
+/turf/closed/wall/vampwall/rustymetal
+	name = "wall"
+	desc = "A huge chunk of metal used to separate rooms."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "rusty-0"
+	base_icon_state = "rusty"
+
+/turf/closed/wall/vampwall/newcave
+	name = "wall"
+	desc = "ROCK AND STONE."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "cave-0"
+	base_icon_state = "cave"
+
+/turf/closed/wall/vampwall/house
+	name = "wall"
+	desc = "ROCK AND STONE."
+	icon = 'code/modules/wod13/walls.dmi'
+	icon_state = "house-0"
+	base_icon_state = "house"
+
 /turf/closed/wall/cathedralbrick
 	name = "wall"
 	desc = "A huge chunk of bricks used to separate rooms."

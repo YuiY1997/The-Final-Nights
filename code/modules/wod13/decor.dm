@@ -791,6 +791,226 @@
 /obj/structure/rack/bubway/west
 	icon_state = "bubway6"
 
+// vintage tables
+/obj/structure/rack/vintagetable1
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "table1"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetable2
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "table2"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+
+/obj/structure/rack/vintagetable3
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "table3"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetable4
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "table4"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetable5
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "table5"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetable6
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "table6"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetable7
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "table7"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetabledesk/
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "deskmiddlehoriz"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetabledesk/horizontal
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "deskmiddlehoriz"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetabledesk/verticle
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "deskmiddlevert"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetabledesk/west
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "deskendwest"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetabledesk/east
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "deskendeast"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetabledesk/north
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "deskendnorth"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetabledesk/south
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "deskendsouth"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablebig
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "bigtablesw"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablebig/sw
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "bigtablesw"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablebig/nw
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "bigtablenw"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablebig/ne
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "bigtablene"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablebig/se
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "bigtablese"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustytable"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty/middle
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustytablemiddle"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty/west
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustytablewest"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty/east
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustytableeast"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty/north
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustytablenorth"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty/south
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustytablesouth"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty/southwest
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustycornersouthwest"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+/obj/structure/rack/vintagetablerusty/southeast
+	name = "table"
+	icon = 'code/modules/wod13/props.dmi'
+	icon_state = "rustycornersoutheast"
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	resistance_flags = INDESTRUCTIBLE
+	desc = "A table."
+
+
+
 /obj/bacotell
 	name = "Baco Tell"
 	desc = "Eat some precious tacos and pizza!"
